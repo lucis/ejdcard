@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import RealSpan from './RealSpan'
 import Typography from '@material-ui/core/Typography'
 import HistoricoCartao from './HistoricoCartao'
 

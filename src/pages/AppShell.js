@@ -128,7 +128,7 @@ class AppShell extends React.Component {
   render() {
     const { classes, match, user, setUser } = this.props
 
-    const { name, picUrl, email, roles } = user
+    const { name, picUrl, roles } = user
 
     const home = <Redirect to={{ pathname: `${match.path}home` }} />
     return (

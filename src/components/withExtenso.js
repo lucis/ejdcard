@@ -1,7 +1,7 @@
 import React from 'react'
 import numero from 'numero-por-extenso'
 
-export default (WrappedComponent) => {
+const withExtenso = (WrappedComponent) => {
     return (props) => {
         const capitalize = text => {
             return text
@@ -16,3 +16,5 @@ export default (WrappedComponent) => {
         return <WrappedComponent {...props} centavosParaExtenso={centavosParaExtenso}/>
     }
 }
+
+export default withExtenso
