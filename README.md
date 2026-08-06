@@ -1,30 +1,30 @@
 ## EJD Card
 
-Sistema integrado de pagamentos para evento interno.
+Integrated payment system for an internal event.
 
-> Feito para o Encontrão EJD da cidade de Campina Grande - PB
+> Built for the Encontrão EJD in Campina Grande - PB
 
 <p align="center">
   <img src="https://i.imgur.com/vfn607N.png" width="200" alt="EJDCard"/>
 </p>
 
-## Autenticação
-- Por default é usado o **Firebase Auth** com os providers Google e Facebook. Para usar o serviço de login do Google, automaticamente o Firebase configura tudo, mas para usar o login social do Facebook **é necessário configurar** algumas coisas, o que envolve criar uma app no portal de desenvolvedores do Facebook, ativar o serviço de login e especificar a URL onde o sistema está deployado. Devem haver vários tutoriais sobre como fazer isso (Firebase Auth and Facebook)
+## Authentication
+- By default, **Firebase Auth** is used with Google and Facebook providers. For Google login, Firebase configures everything automatically, but for Facebook social login **additional setup is required**: create an app in the Facebook developer portal, enable the login service, and specify the URL where the system is deployed. There should be plenty of tutorials covering this (Firebase Auth and Facebook).
 
-## Autorização
-Após a autenticação de um usuário, o **admin** consegue alocar papéis para este usuário, o que irá determinar a quais seções da aplicação este terá acesso. (Você deve setar qual usuário é o admin diretamente no banco de dados do Firebase)
+## Authorization
+After a user authenticates, the **admin** can assign roles that determine which sections of the application they can access. (You must set which user is the admin directly in the Firebase database.)
 
-É possível atribuir papéis através das letras que os representam, escrevendo uma string na configuração de cada usuário. Exemplo: ao adicionar`vu` como papéis de um certo usuário, este poderá fazer vendas e recargas.
+Roles are assigned via the letters that represent them, by writing a string in each user's configuration. For example: adding `vu` as a user's roles allows them to make sales and top-ups.
 
-|Papel| Significado |
+| Role | Meaning |
 |--|--|
-| `v` | Usuário pode fazer vendas com qualquer cartão |
-| `u` | Usuário pode fazer recargas de cartão  |
-| `c` | Usuário pode cadastrar cartões (e setar saldo inicial) |
-| `r` | Usuário pode ler o saldo de algum cartão (automaticamente todos usuários que logam têm esse papel) |
-| `a` | Usuário é administrador, pode alterar permissões de outros usuários |
+| `v` | User can make sales with any card |
+| `u` | User can top up cards |
+| `c` | User can register cards (and set initial balance) |
+| `r` | User can read a card's balance (automatically granted to all logged-in users) |
+| `a` | User is an administrator and can change other users' permissions |
 
-## Desenvolvendo
-- Você precisar **criar uma app Firebase** e configurar as credenciais no arquivo `withRoot.js`.
-- Após isso, rode `yarn start` e tudo deve funcionar.
-- Logue com seu provedor (Google ou Facebook), e, no banco, adicione o papel `vucra` no usuário que foi criado para você
+## Development
+- You need to **create a Firebase app** and configure the credentials in `withRoot.js`.
+- Then run `yarn start` and everything should work.
+- Sign in with your provider (Google or Facebook), and in the database add the role `vucra` to the user that was created for you.
