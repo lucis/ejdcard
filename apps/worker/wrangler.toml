@@ -1,0 +1,6 @@
+name = "ejdcard-worker"
+main = "src/index.ts"
+compatibility_date = "2025-08-07"
+
+[vars]
+APP_NAME = "ejdcard"
